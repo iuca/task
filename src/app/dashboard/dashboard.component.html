@@ -5,16 +5,29 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <div class="container">
+ <h3 class="h3">SpaceX Launch Programs </h3>
     <div class="row">
+       
         <div class="col-md-3">
-          <h3> filter </h3>
+          <h4> <b>Filter </b></h4>
+          <div class="mt-2 text-center mb-2">Launch year</div>
           <div class="product-grid">
-            <button *ngFor="let year of years" (click)="filter_method(year)" class="btn btn-primary">{{year}}</button>
+            <button *ngFor="let year of years" (click)="filter_method(year)" class="btn btn-primary custum-btn">{{year}}</button>
           </div>
+          <div class="">
+          <div class="mt-2 text-center mb-2">Successful Launch</div>
+           <button class="btn btn-primary custum-btn" (click)="filter_all(true,false)" >True</button>
+           <button class="btn btn-primary custum-btn" (click)="filter_all(false,true)" >False</button>
+          </div>
+
+          <div class="mt-2">
+          <div class="mt-2 text-center mb-2">Successful Landing</div>
+           <button class="btn btn-primary custum-btn" (click)="filter_all(true,false)">True</button>
+           <button class="btn btn-primary custum-btn" (click)="filter_all(false,true)">False</button>
+          </div>
+          
         </div>
         <div class="col-md-9">
-        <h3 class="h3">SpaceX Launch Programs </h3>
-
         <div class="row">
             <div class="col-md-3 col-sm-6" *ngFor="let item of filteredItems;let indexOfelement=index;">
                 <div class="product-grid">
@@ -39,5 +52,8 @@
             </div>
         </div>
     </div>
-    </div>    
+    </div> 
+    <div class="footer">
+        <b>Developed by: {{devp_name}}</b>
+    </div>   
 </div>
