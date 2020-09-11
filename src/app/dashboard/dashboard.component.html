@@ -1,0 +1,43 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+          <h3> filter </h3>
+          <div class="product-grid">
+            <button *ngFor="let year of years" (click)="filter_method(year)" class="btn btn-primary">{{year}}</button>
+          </div>
+        </div>
+        <div class="col-md-9">
+        <h3 class="h3">SpaceX Launch Programs </h3>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-6" *ngFor="let item of filteredItems;let indexOfelement=index;">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" [src]="item.links.mission_patch">
+                            <img class="pic-2" [src]="item.links.mission_patch_small">
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#">{{item.rocket.rocket_name}}</a></h3>
+                        <div class="record">
+                            <ul>
+                               <li><b>Mission Ids:</b>: <span>{{item.flight_number}}</span></li>
+                               <li><b>Launch Year:</b>: <span>{{item.launch_year}}</span></li>
+                               <li><b>Successful Launch:</b>:{{item.launch_success}}</li>
+                               <li><b>Successful Landing:</b>:{{item.launch_success}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>    
+</div>
